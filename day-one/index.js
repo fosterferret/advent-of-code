@@ -9,8 +9,10 @@ try {
 }
 
 const part_one = nums => {
-  const arr = nums.split("\n").map(num => parseInt(num));
-  return arr.reduce((acc, curr) => Math.floor(curr / 3) - 2 + acc, 0);
+  return nums
+    .split("\n")
+    .map(num => parseInt(num))
+    .reduce((acc, curr) => Math.floor(curr / 3) - 2 + acc, 0);
 };
 
 console.log(part_one(data));
@@ -22,6 +24,7 @@ const part_two = nums => {
     .map(initMass => {
       let totalFuel = 0;
       let remainingMass = initMass;
+
       while (remainingMass > 0) {
         const fuel = Math.floor(remainingMass / 3) - 2;
 
@@ -36,7 +39,7 @@ const part_two = nums => {
       return totalFuel;
     });
 
-  return consolidated.reduce((a, b) => a + b, 0);
+  return consolidated.reduce((acc, curr) => acc + curr, 0);
 };
 
 console.log(part_two(data));
